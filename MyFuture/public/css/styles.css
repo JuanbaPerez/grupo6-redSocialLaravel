@@ -1,0 +1,10 @@
+header ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header li{
+
+  margin-right: 10px;
+}
