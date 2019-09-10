@@ -35,7 +35,7 @@
                 @csrf
 
                 <input class="form-control" type="text" name="search">
-                <button type="submit" name="button" class="btn btn-primary" >Search</button>
+                    <button type="submit" name="button" class="btn btn-primary" >Search</button>
 
             </form>
 
