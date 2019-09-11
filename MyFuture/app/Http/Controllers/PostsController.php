@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 
+
 class PostsController extends Controller
 {
 
@@ -13,8 +14,11 @@ class PostsController extends Controller
         $posts = Post::paginate(10);
 
 
+
+
         return view("posts", compact("posts"));
     }
+
 
 
     public function detail($id)
@@ -29,6 +33,9 @@ class PostsController extends Controller
     public function add () {
         $posts = Post::all();
 
+
+
+
         return view("addPost", compact("posts"));
 
 
@@ -38,17 +45,23 @@ class PostsController extends Controller
     public function store (Request $req) {
         $rules = [
             "image" => "required|image|",
-            "description" => "string"
+            "description" => "string",
+            "user_id" => "integer"
 
         ];
 
         $this->validate($req, $rules);
 
+
+
         $post = New Post();
 
-        $post->image = $req->image;
+        $post->image = $req->image;  //cambiarlo <-
         $post->description = $req->description;
+        $post->user_id = $req->user()->id;
 
+
+        //Storage::disk('local')->put('/posts/', 'Contents');
 
         $post->save();
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section("title")
-    Posts
+Posts
 @endsection
 
 @section("main")
@@ -14,9 +14,10 @@
     @forelse($posts as $post)
 
     <li>
-        <a href="/post"/{{$post->id}}>
-        {{$post->name}}
+        <a href="/post/{{$post->id}}">
+            {{$post->description}}
         </a>
+        <img src="/storage/{{$post->image}}" alt="">
     </li>
 
     @empty
@@ -33,4 +34,3 @@
 
 
 @endsection
-
