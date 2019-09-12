@@ -15,7 +15,7 @@ Users
 
     <li>
         <img style="width: 300px; margin-bottom: 10px; border-radius: 50%" class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
-        <a href="/user/{{$user->id}}">
+        <a style="color: black" href="/user/{{$user->id}}">
             {{$user->userName}}
         </a>
     </li>

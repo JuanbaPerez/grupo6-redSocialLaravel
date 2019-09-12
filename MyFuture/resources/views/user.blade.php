@@ -10,33 +10,30 @@ User: {{$user->name}}
     <h1>Check User {{$user->name}} <br>detail</h1>
 </div>
 
-<ul>
-    @forelse($user->posts as $post)
+<ul style="list-style-type:none; background-color: lightgrey; width: 50%; margin: 0 auto; border-radius: 15px; font-size: 30px">
 
-    <li>
-        <a href="/user/{{$post->id}}">
-            {{$post->description}}
-        </a>
+
+    <li style="font-family: 'Cinzel Decorative', cursive">
+        Usuario: {{$user->name}}
+        <br>
+        Nickname: {{$user->userName}}
+        <br>
+        Apellido: {{$user->lastName}}
+        <br>
+        Email: {{$user->email}}
+        <br>
+        Fecha de Nacimiento: {{$user->birthday}}
+
 
 
     </li>
 
-    @empty
-    <p>
-        User doesnt exists
-    </p>
 
-    <p>
-        Try later....
-    </p>
-
-    @endforelse
 </ul>
 
 
 <a href="/users">
-    <button class="btn btn-default" type="button" name="button">All Posts</button>
+    <button class="btn btn-primary" type="button" name="button">All Users</button>
 </a>
 
 @endsection
-
