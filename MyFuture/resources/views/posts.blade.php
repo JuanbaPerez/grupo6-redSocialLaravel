@@ -10,15 +10,15 @@ Posts
     <h1>Check our Posts</h1>
 </div>
 
-<ol>
+<ul style="list-style-type: none">
     @forelse($posts as $post)
 
     <li>
-        <a href="/post/{{$post->id}}">
+        <a style="color: black" href="/post/{{$post->id}}">
             {{$post->description}}
         </a>
-        <img src="/storage/{{$post->image}}" alt="">
-    </li>
+        <img style="width: 50%" src="{{asset('storage/posts/BQWf2foy4NWNChxkkDzwYd1ubZwFn7tQC4zeOCCb.jpeg')}}">
+    </li> <br>
 
     @empty
     <p>

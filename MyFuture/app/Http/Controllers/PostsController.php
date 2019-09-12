@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Storage;
+
 
 
 class PostsController extends Controller
@@ -43,7 +45,7 @@ class PostsController extends Controller
 
     public function store (Request $req) {
         $rules = [
-            "image" => "required|image|",
+            "image" => "required",
             "description" => "string",
             "user_id" => "integer"
 
@@ -51,18 +53,22 @@ class PostsController extends Controller
 
         $this->validate($req, $rules);
 
-        $file = request()->file('file');
-        $file->store('toPath', ['disk' => 'public']);
 
 
         $post = New Post();
 
-        $post->image = $req->$file;
+        $path = Storage::disk('public')->put('posts', $req->file('image'));
+
+        $post->fill(['image' => asset($path)]);
+
+
+
+
         $post->description = $req->description;
         $post->user_id = $req->user()->id;
 
 
-        //Storage::disk('local')->put('/posts/', 'Contents');
+
 
         $post->save();
 

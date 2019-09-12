@@ -14,10 +14,12 @@ Posts
 
 <ul>
 
-    <li>
+    <li style="list-style-type: none">
 
+        <img style="width: 50%" src="{{asset('storage/posts/BQWf2foy4NWNChxkkDzwYd1ubZwFn7tQC4zeOCCb.jpeg')}}">
+    <br>
 
-        {{$post->description}}
+        Pie de Post: {{$post->description}}
 
     </li>
 </ul>
