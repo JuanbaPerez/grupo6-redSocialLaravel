@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield("css")
     @yield("js")
 </head>
@@ -42,36 +43,36 @@
                 </form>
 
 
-            <nav class="navbar navbar-expand-sm bg-dark">
-                <ul class="navbar-nav">
-                    @if (Auth::check())
-                    <li class="nav-item">
-                        Hello {{Auth::user()->name}}!
-                    </li>
-                    <img src="/storage/{{Auth::user()->avatar}}" alt="">
-                    <li class="nav-item">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <nav class="navbar navbar-expand-sm bg-dark">
+                    <ul class="navbar-nav">
+                        @if (Auth::check())
+                        <li class="nav-item">
+                            Hello {{Auth::user()->name}}!
+                        </li>
+                        <img src="/storage/{{Auth::user()->avatar}}" alt="">
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                                {{ __('Logout') }}
+                            </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a href="/register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/login">Login</a>
-                    </li>
-                    @endif
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a href="/register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login">Login</a>
+                        </li>
+                        @endif
 
-                </ul>
+                    </ul>
 
 
-            </nav>
+                </nav>
         </header>
         <main>
             @yield("main")

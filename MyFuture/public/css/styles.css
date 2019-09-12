@@ -46,3 +46,114 @@ header form input {
 header form button {
     height: 36px;
 }
+
+
+
+
+/***************************
+      HOME POST
+****************************/
+
+
+
+
+.postContainer:nth-child(1) {
+
+  margin-top: 130px;
+
+}
+  .postContainer {
+    background-color: #c0c0c0;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px;
+
+  }
+
+  .photoProfileContainer {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px 0px 5px 0px;
+
+
+  }
+
+
+  .postContainer .userName {
+    width: 50%;
+
+  }
+
+  .userName h2 {
+    font-size: 20px;
+  }
+
+  .postContainer .photoProfileContainer img.profilePicture {
+  display: block;
+  width: 80px;
+  margin-left: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 80px;
+
+  }
+
+
+
+
+  .postImage img{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+
+
+  }
+
+
+  .postIcons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .postIcons-heart {
+    width: 50%;
+    border-right: 1px solid black;
+  }
+
+  .postIcons-comment {
+    width: 50%;
+
+  }
+
+  button.buttons {
+    font-size: 20px;
+  }
+
+  button.buttons {
+    background-color: #c0c0c0;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+
+  }
+
+  button.buttons i {
+    color: black;
+  }
+
+  .comments {
+    margin-top: 20px;
+
+
+  }
+
+  .comments p {
+    font-size: 14px;
+    text-align: left;
+    margin-left: 5px;
+  }
