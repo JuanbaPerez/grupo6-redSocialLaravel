@@ -26,11 +26,13 @@ Posts
         </div>
 
         <div class="postImage">
-            <img style="width: 100%" src="{{asset('storage/posts/8um6oVJxwxlga0ljuDdyz5DbOreJijVcoSLPmagP.png')}}">
+            <img style="width: 100%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
         </div>
 
         <div class="description">
-            <p>{{$post->description}}</p>
+            <p><a style="color: black" href="/post/{{$post->id}}">
+                    {{$post->description}}
+                </a></p>
         </div>
 
 
