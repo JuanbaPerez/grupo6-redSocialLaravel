@@ -10,12 +10,13 @@ Users
     <h1>Check our Users</h1>
 </div>
 
-<ul>
+<ul style="list-style-type: none">
     @forelse($users as $user)
 
     <li>
+        <img style="width: 300px; margin-bottom: 10px; border-radius: 50%" class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
         <a href="/user/{{$user->id}}">
-            {{$user->name}}
+            {{$user->userName}}
         </a>
     </li>
 
@@ -31,7 +32,6 @@ Users
     @endforelse
 </ul>
 
+<br>
 
 @endsection
-
-

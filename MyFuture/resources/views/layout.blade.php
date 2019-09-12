@@ -22,14 +22,14 @@
             <nav class="navbar navbar-expand-sm bg-dark">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/posts">Posts</a>
+                        <a style="color: white" class="nav-link" href="/posts">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/users">Users</a>
+                        <a style="color: white" class="nav-link" href="/users">Users</a>
                     </li>
                     @if (Auth::check())
                     <li class="nav-item">
-                        <a class="nav-link" href="/posts/add">Add a post</a>
+                        <a style="color: white" class="nav-link" href="/posts/add">Add a post</a>
                     </li>
                     @endif
                 </ul>
@@ -46,12 +46,12 @@
                 <nav class="navbar navbar-expand-sm bg-dark">
                     <ul class="navbar-nav">
                         @if (Auth::check())
-                        <li class="nav-item">
+                        <li class="nav-item" style="color: white">
                             Hello {{Auth::user()->name}}!
                         </li>
                         <img src="/storage/{{Auth::user()->avatar}}" alt="">
                         <li class="nav-item">
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a style="color: red" href="{{ route('logout') }}" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>

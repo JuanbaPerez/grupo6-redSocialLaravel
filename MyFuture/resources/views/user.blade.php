@@ -7,15 +7,15 @@ User: {{$user->name}}
 @section("main")
 
 <div class="jumbotron">
-    <h1>Check User {{$user->name}}</h1>
+    <h1>Check User {{$user->name}} <br>detail</h1>
 </div>
 
 <ul>
     @forelse($user->posts as $post)
 
     <li>
-        <a href="/user/ {{$post->id}}">
-            {{$post->name}}
+        <a href="/user/{{$post->id}}">
+            {{$post->description}}
         </a>
 
 

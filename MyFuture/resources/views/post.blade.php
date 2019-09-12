@@ -9,19 +9,22 @@ Posts
 
 
 <div class="jumbotron">
-    <h1>Check our Posts</h1>
+    <h1>Detail Post</h1>
 </div>
 
 <ul>
 
     <li style="list-style-type: none">
 
-        <img style="width: 50%" src="{{asset('storage/posts/BQWf2foy4NWNChxkkDzwYd1ubZwFn7tQC4zeOCCb.jpeg')}}">
+        <img style="width: 50%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
         <br>
 
-        <p style="font-size: 50px">
-            Pie de Post: {{$post->description}}
-        </p>
+        <div style="width: 50%, heigth: 100px" class="jumbotron jumbotron-fluid">
+
+            <p style="font-size: 50px">
+                {{$post->description}}
+            </p>
+        </div>
 
     </li>
 </ul>
