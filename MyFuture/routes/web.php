@@ -19,7 +19,6 @@ Route::get("/", "HomeController@home");
 
 Route::get("/posts", "PostsController@all");
 
-
 Route::get("/users", "UsersController@all");
 
 Route::get("/categories", "CategoriesController@all");
@@ -35,6 +34,8 @@ Route::get("/search", "UsersController@search");
 Route::get("/posts/add", "PostsController@add")->middleware("auth");
 
 Route::post("/posts/add", "PostsController@store")->middleware("auth");
+
+
 
 
 

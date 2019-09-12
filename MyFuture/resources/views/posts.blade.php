@@ -10,7 +10,7 @@ Posts
     <h1>Check our Posts</h1>
 </div>
 
-<ul>
+<ol>
     @forelse($posts as $post)
 
     <li>
@@ -30,7 +30,7 @@ Posts
     </p>
 
     @endforelse
-</ul>
+</ol>
 
 
 @endsection

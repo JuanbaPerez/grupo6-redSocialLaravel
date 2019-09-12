@@ -15,8 +15,9 @@ Posts
 <ul>
 
     <li>
-            {{$post->image}}
-            {{$post->description}}
+
+
+        {{$post->description}}
 
     </li>
 </ul>

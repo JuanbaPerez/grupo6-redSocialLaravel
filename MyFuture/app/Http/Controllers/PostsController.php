@@ -13,9 +13,6 @@ class PostsController extends Controller
 
         $posts = Post::paginate(10);
 
-
-
-
         return view("posts", compact("posts"));
     }
 
@@ -42,6 +39,8 @@ class PostsController extends Controller
     }
 
 
+
+
     public function store (Request $req) {
         $rules = [
             "image" => "required|image|",
@@ -52,11 +51,13 @@ class PostsController extends Controller
 
         $this->validate($req, $rules);
 
+        $file = request()->file('file');
+        $file->store('toPath', ['disk' => 'public']);
 
 
         $post = New Post();
 
-        $post->image = $req->image;  //cambiarlo <-
+        $post->image = $req->$file;
         $post->description = $req->description;
         $post->user_id = $req->user()->id;
 
