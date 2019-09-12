@@ -157,3 +157,10 @@ header form button {
     text-align: left;
     margin-left: 5px;
   }
+.jumbotron h1{
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.jumbotron h2{
+  font-family: 'Cinzel Decorative', cursive;
+}

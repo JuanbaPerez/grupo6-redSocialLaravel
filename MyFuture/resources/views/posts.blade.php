@@ -26,7 +26,7 @@ Posts
         </div>
 
         <div class="postImage">
-            <img style="width: 100%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
+            <img style="width: 100%" src="{{asset('storage/posts/8um6oVJxwxlga0ljuDdyz5DbOreJijVcoSLPmagP.png')}}">
         </div>
 
         <div class="description">
