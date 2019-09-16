@@ -103,6 +103,12 @@ header form button {
 
   .userName h2 {
     font-size: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+
+  .userName p {
+        margin-left: 10px;
   }
 
   .postContainer .photoProfileContainer img.profilePicture {

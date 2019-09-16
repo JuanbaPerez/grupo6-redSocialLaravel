@@ -21,12 +21,16 @@
         <header>
             <nav class="navbar navbar-expand-sm bg-dark">
                 <ul class="navbar-nav">
+                    <li style="font-family: 'Cinzel Decorative', cursive; color: white; font-size: 30px" class="nav-item">myFuture</li>
+                    @if (Auth::check())
                     <li class="nav-item">
                         <a style="color: white" class="nav-link" href="/posts">Posts</a>
                     </li>
+
                     <li class="nav-item">
                         <a style="color: white" class="nav-link" href="/users">Users</a>
                     </li>
+                    @endif
                     @if (Auth::check())
                     <li class="nav-item">
                         <a style="color: white" class="nav-link" href="/posts/add">Add a post</a>
@@ -62,10 +66,10 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a href="/register">Register</a>
+                            <a style="color: white" href="/register">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/login">Login</a>
+                            <a style="color: white" href="/login">Login</a>
                         </li>
                         @endif
 

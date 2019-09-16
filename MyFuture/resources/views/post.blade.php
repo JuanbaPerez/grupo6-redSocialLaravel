@@ -16,7 +16,7 @@ Posts
 
     <li style="list-style-type: none">
 
-        <img style="width: 50%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
+        <img style="width: 80%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
         <br>
 
         <div style="width: 50%, heigth: 100px" class="jumbotron jumbotron-fluid">

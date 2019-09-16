@@ -57,7 +57,7 @@ class PostsController extends Controller
 
         $post = New Post();
 
-        $path = Storage::disk('public')->put('posts', $req->file('image'));
+        $path = Storage::disk('public')->put('posts', $req->file('image'));     //comando que guarda la imagen en disco rigido :)
 
         $post->fill(['image' => asset($path)]);
 

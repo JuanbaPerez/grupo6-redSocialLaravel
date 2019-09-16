@@ -10,11 +10,12 @@ Search Results
     <h1>Serch results for: {{$search}} </h1>
 </div>
 
-<ul>
+<ul style="list-style-type:none">
     @forelse($users as $user)
 
     <li>
-        <a href="/user/{{$user->id}}">
+        <img style="width: 300px; margin-bottom: 10px; border-radius: 50%" class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
+        <a style="color:black" href="/user/{{$user->id}}">
             {{$user->name}}
         </a>
     </li>

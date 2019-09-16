@@ -19,7 +19,7 @@ Posts
             <img class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
 
             <div class=" userName">
-            <h2>Franky Funk</h2>
+            <h2>{{$post->user["userName"]}}</h2>
             <p>30 minutes</p>
         </div>
 
