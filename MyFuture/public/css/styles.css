@@ -28,8 +28,7 @@ ul.links {
     margin-top: 20px;
 
 }
-
-header ul img {
+/* ul img {
     width: 40px;
     border-radius: 50%;
     position: relative;
@@ -37,28 +36,30 @@ header ul img {
     margin-left: 5px;
     margin-right: 10px;
 
-}
+} */
 
-header nav {
+nav {
     display: flex;
     flex-wrap: wrap;
 
 }
 
-header form {
+nav form {
     display: flex;
     margin-top: 10px;
 }
 
 
-header form input {
+form input {
     width: 100%;
     margin-right: 10px;
 }
 
-header form button {
+form button {
     height: 36px;
 }
+
+
 
 
 
@@ -133,7 +134,7 @@ header form button {
   }
 
 
-  .postIcons {
+  div.postIcons {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -153,11 +154,11 @@ header form button {
     font-size: 20px;
   }
 
-  button.buttons {
+  button.buttons2 {
     background-color: #c0c0c0;
     border-radius: 0px 0px 5px 5px;
     padding-bottom: 15px;
-    margin-top: 10px;
+
 
   }
 
@@ -183,3 +184,5 @@ header form button {
 .jumbotron h2{
   font-family: 'Cinzel Decorative', cursive;
 }
+
+

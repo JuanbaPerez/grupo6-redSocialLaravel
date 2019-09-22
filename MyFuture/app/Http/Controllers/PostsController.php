@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
 use Illuminate\Support\Facades\Storage;
+use App\Post;
+use App\User;
 
 
 
@@ -45,7 +46,7 @@ class PostsController extends Controller
 
     public function store (Request $req) {
         $rules = [
-            "image" => "required",
+            "image" => "required|image",
             "description" => "string",
             "user_id" => "integer"
 
@@ -62,8 +63,6 @@ class PostsController extends Controller
         $post->fill(['image' => asset($path)]);
 
 
-
-
         $post->description = $req->description;
         $post->user_id = $req->user()->id;
 
@@ -74,5 +73,16 @@ class PostsController extends Controller
 
 
         return redirect("/post/" . $post->id);
+    }
+
+
+    public function delete(Request $req) {
+        $idPost = $req["id"];
+
+        $post = Post::find($idPost);
+
+        $post->delete();
+
+        return redirect("/posts");
     }
 }

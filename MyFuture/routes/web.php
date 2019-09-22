@@ -33,6 +33,11 @@ Route::get("/posts/add", "PostsController@add")->middleware("auth");
 
 Route::post("/posts/add", "PostsController@store")->middleware("auth");
 
+Route::post("/posts/delete", "PostsController@delete")->middleware("auth");
+
+
+
+
 
 
 

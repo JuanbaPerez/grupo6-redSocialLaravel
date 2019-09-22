@@ -1,4 +1,5 @@
 @extends('layout')
+@extends('layouts.app')
 
 @section("title")
 Posts
@@ -16,7 +17,7 @@ Posts
 
     <li style="list-style-type: none">
 
-        <img style="width: 80%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
+        <img style="width: 80%" src="{{asset('storage/posts/imageTest.png')}}">
         <br>
 
         <div style="width: 50%, heigth: 100px" class="jumbotron jumbotron-fluid">
@@ -29,5 +30,13 @@ Posts
     </li>
 </ul>
 
+@if (Auth::check())
+<form class="" action="/posts/delete" method="post">
+    @csrf
+
+    <input type="hidden" name="id" value="{{$post->id}}">
+    <button type="submit" name="button" class="btn btn-danger">Delete Post</button>
+</form>
+@endif
 
 @endsection

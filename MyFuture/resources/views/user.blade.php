@@ -1,4 +1,5 @@
 @extends('layout')
+@extends('layouts.app')
 
 @section("title")
 User: {{$user->name}}
@@ -34,6 +35,13 @@ User: {{$user->name}}
 
 <a href="/users">
     <button class="btn btn-primary" type="button" name="button">All Users</button>
+</a>
+<a href="/posts">
+    <button class="btn btn-primary" type="button" name="button">All Posts</button>
+</a>
+
+<a href="/update">
+    <button class="btn btn-primary" type="button" name="button">Edit</button>
 </a>
 
 @endsection

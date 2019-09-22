@@ -1,4 +1,6 @@
 @extends('layout')
+@extends('layouts.app')
+
 
 @section("title")
 Posts
@@ -18,15 +20,23 @@ Posts
         <div class="photoProfileContainer">
             <img class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
 
-            <div class=" userName">
-                <h2>{{$post->user["userName"]}}</h2>
+
+            <div class="userName">
+
+
+                <h2>
+                    <a style="color: black; font-size: 15px" href="/user/{{$post->user->id}}">{{$post->user["userName"]}}
+                    </a>
+                </h2>
                 <p>30 minutes</p>
             </div>
 
         </div>
 
         <div class="postImage">
-            <img style="width: 100%" src="{{asset('storage/posts/LvG675j6XkyP2bNNFWEXOSM2J5gayKHyLxSC8o7f.jpeg')}}">
+
+            <!--<img class="profilePicture" src="{{url('storage/posts/'. $post->image)}}" alt="{{$post->image}}"> !-->
+            <img class="photoContainer" src="{{asset('storage/posts/imageTest.png')}}">
         </div>
 
         <div class="description">
@@ -69,6 +79,8 @@ Posts
 
     @endforelse
 </ul>
+
+{{$posts->links()}}
 
 
 @endsection
