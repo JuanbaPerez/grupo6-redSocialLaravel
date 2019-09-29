@@ -11,19 +11,30 @@ User: {{$user->name}}
     <h1>Check User {{$user->name}} <br>detail</h1>
 </div>
 
-<ul style="list-style-type:none; background-color: lightgrey; width: 50%; margin: 0 auto; border-radius: 15px; font-size: 30px">
+@if (Auth::check() && Auth::user()->isAdmin())
+
+<div>
+    <button class="btn btn-danger">
+        <a href="{{ route('admin/dashboard') }}">Administrador</a>
+    </button>
+</div>
+
+
+@endif
+
+<ul style="list-style-type:none; background-color: lightgrey; width: 100%; margin: 0 auto; border-radius: 15px; font-size: 30px">
 
 
     <li style="font-family: 'Cinzel Decorative', cursive">
-        Usuario: {{$user->name}}
+        <strong>Usuario: </strong> {{$user->name}}
         <br>
-        Nickname: {{$user->userName}}
+        <strong>Nickname: </strong> {{$user->userName}}
         <br>
-        Apellido: {{$user->lastName}}
+        <strong>Apellido: </strong> {{$user->lastName}}
         <br>
-        Email: {{$user->email}}
+        <strong>Email: </strong> {{$user->email}}
         <br>
-        Fecha de Nacimiento: {{$user->birthday}}
+        <strong>Fecha de Nacimiento:</strong> {{$user->birthday}}
 
 
 

@@ -76,6 +76,9 @@
                                     <li class="list-group-item">
                                         <a style="color:red" href="">Posts</a>
                                     </li>
+                                    <li class="list-group-item">
+                                        <a style="color:red" href="{{ route('views/user', Auth::user()->id) }}">Go Back</a>
+                                    </li>
 
                                 </ul>
                             </div>

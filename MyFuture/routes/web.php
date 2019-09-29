@@ -23,7 +23,7 @@ Route::get("/users", "UsersController@all");
 
 Route::get("/categories", "CategoriesController@all");
 
-Route::get("/user/{id}", "UsersController@detail");
+Route::get("/user/{id}", "UsersController@detail")->name("views/user");
 
 Route::get("/post/{id}", "PostsController@detail");
 
@@ -53,6 +53,10 @@ Route::put('admin/users/update/{id}', 'AdminController@update')->name('admin/use
 /* Eliminar */
 Route::put('admin/users/eliminar/{id}', 'AdminController@eliminar')->name('admin/users/eliminar');
 
+/* Ruta administador */
+Route::group(['middleware' => ['auth', 'admin']], function() {
+    Route::get('admin/dashboard', 'Dashboard@admin')->name('admin/dashboard');
+});
 
 
 

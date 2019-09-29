@@ -14,7 +14,7 @@ class AddAdminToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->string('is_admin')->after('name')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddAdminToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('is_admin');
         });
     }
 }
