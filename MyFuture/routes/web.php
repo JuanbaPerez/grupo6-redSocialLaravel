@@ -35,7 +35,23 @@ Route::post("/posts/add", "PostsController@store")->middleware("auth");
 
 Route::post("/posts/delete", "PostsController@delete")->middleware("auth");
 
+// Ruta Dashboard
+Route::get('admin/dashboard', 'Dashboard@index')->name('admin/dashboard');
 
+// Rutas CRUD
+/* Crear */
+Route::get('admin/users/crear', 'AdminController@crear')->name('admin/users/crear');
+Route::put('admin/jugos/store', 'AdminController@store')->name('admin/users/store');
+
+/* Leer */
+Route::get('admin/users', 'AdminController@index')->name('admin/users');
+
+/* Actualizar */
+Route::get('admin/users/actualizar/{id}', 'AdminController@actualizar')->name('admin/users/actualizar');
+Route::put('admin/users/update/{id}', 'AdminController@update')->name('admin/users/update');
+
+/* Eliminar */
+Route::put('admin/users/eliminar/{id}', 'AdminController@eliminar')->name('admin/users/eliminar');
 
 
 

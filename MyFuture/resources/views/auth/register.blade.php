@@ -100,11 +100,11 @@
                             <label for="genre" enctype="multipart/form-data" class="col-md-4 col-form-label text-md-right">{{ __('Genre') }}</label>
 
                             <div class="col-md-6">
-                                <label for="genre_male">Male</label>
-                                <input id="genre_male" type="radio" class="form-control @error('genre') is-invalid @enderror" name="genre" value="male">
+                                <label for="genre_male">Masculino</label>
+                                <input id="genre_male" type="radio" class="form-control @error('genre') is-invalid @enderror" name="genre" value="Male">
 
-                                <label for="genre_femaile">Female</label>
-                                <input id="genre_femaile" type="radio"class="form-control @error('genre') is-invalid @enderror" name="genre" value="female">
+                                <label for="genre_femaile">Femenino</label>
+                                <input id="genre_femaile" type="radio"class="form-control @error('genre') is-invalid @enderror" name="genre" value="Female">
                                 @error('genre')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
