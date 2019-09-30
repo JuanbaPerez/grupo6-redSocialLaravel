@@ -64,7 +64,7 @@
                                         <a style="color:red" href="{{ route('admin/users') }}"> Users</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a style="color:red" href="">Posts</a>
+                                        <a style="color:red" href="{{ route('admin/posts') }}">Posts</a>
                                     </li>
                                     <li class="list-group-item">
                                         <a style="color:red" href="{{ route('views/user', Auth::user()->id) }}">Go Back</a>

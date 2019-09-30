@@ -14,7 +14,7 @@ class PostsController extends Controller
 
     public function all() {
 
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(5);
 
         return view("posts", compact("posts"));
     }

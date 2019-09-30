@@ -103,7 +103,7 @@
 
                                         <div class="panel-heading">
                                             <div class="panel-title">
-                                                <h2>Users</h2>
+                                                <h2>Posts</h2>
                                             </div>
 
                                         </div>

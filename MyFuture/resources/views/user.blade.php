@@ -67,10 +67,12 @@ User: {{$user->name}}
             <div class="single-img">
 
                 <!-- <img src="../storage/posts/imageTest.png" alt="postFoto"> -->
-                <img src="../../../storage/avatar/{{ $post->image }}" width="50" class="img-responsive">
-                <p>
-                    {{$post['description']}}
-                </p>
+                <img src="../../../storage/avatar/{{ $post->image }}">
+
+                    <h2 style="font-weight:bold">
+                        {{$post['description']}}
+                    </h2>
+
 
                 <div class="img-overlay">
 
@@ -110,8 +112,8 @@ User: {{$user->name}}
 
 
 
-            </div>
-        </div>
+    </div>
+    </div>
 
 
 
