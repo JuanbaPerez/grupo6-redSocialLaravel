@@ -10,7 +10,7 @@ class UsersController extends Controller
 {
     public function all() {
 
-        $users = User::all();
+        $users = User::paginate(10);
 
         return view("/users", compact("users"));
 

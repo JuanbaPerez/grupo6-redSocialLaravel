@@ -37,6 +37,8 @@ Users
     @endforelse
 </ul>
 
+{{$users->links()}}
+
 <br>
 
 @endsection
