@@ -35,23 +35,48 @@ Route::post("/posts/add", "PostsController@store")->middleware("auth");
 
 Route::post("/posts/delete", "PostsController@delete")->middleware("auth");
 
+
+
+
+// Rutas CRUD
+
+
 // Ruta Dashboard
 Route::get('admin/dashboard', 'Dashboard@index')->name('admin/dashboard');
 
-// Rutas CRUD
-/* Crear */
+/***** USUARIOS ********/
+/* Crear Usuarios */
 Route::get('admin/users/crear', 'AdminController@crear')->name('admin/users/crear');
-Route::put('admin/jugos/store', 'AdminController@store')->name('admin/users/store');
+Route::put('admin/users/store', 'AdminController@store')->name('admin/users/store');
 
-/* Leer */
+/* Leer Usuarios */
 Route::get('admin/users', 'AdminController@index')->name('admin/users');
 
-/* Actualizar */
+/* Actualizar Usuarios */
 Route::get('admin/users/actualizar/{id}', 'AdminController@actualizar')->name('admin/users/actualizar');
 Route::put('admin/users/update/{id}', 'AdminController@update')->name('admin/users/update');
 
-/* Eliminar */
+/* Eliminar Usuario */
 Route::put('admin/users/eliminar/{id}', 'AdminController@eliminar')->name('admin/users/eliminar');
+
+
+/***** POSTEOS ********/
+/* Crear Posteos */
+Route::get('admin/posts/crear', 'AdminController@crearPost')->name('admin/posts/crear');
+Route::put('admin/posts/store', 'AdminController@storePost')->name('admin/posts/store');
+
+/* Leer Posteos */
+Route::get('admin/posts', 'AdminController@indexPost')->name('admin/posts');
+
+/* Actualizar Posteos */
+Route::get('admin/posts/actualizarPost/{id}', 'AdminController@actualizarPost')->name('admin/posts/actualizar');
+Route::put('admin/posts/update/{id}', 'AdminController@updatePost')->name('admin/posts/update');
+
+/* Eliminar Posteos */
+Route::put('admin/posts/eliminar/{id}', 'adminController@eliminarPost')->name('admin/posts/eliminar');
+
+
+
 
 /* Ruta administador */
 Route::group(['middleware' => ['auth', 'admin']], function() {

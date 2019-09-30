@@ -5,23 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="http://nubecolectiva.com/favicon.ico" />
-
     <meta name="theme-color" content="#000000" />
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
 
 </head>
 
-<body style="background-image: url(../../storage/tree.jpg)">
+<body>
 
     <div class="container mt-5 mb-5">
 
         <div class="row">
 
             <div class="col-md-12">
-
 
 
                 <div class="header">
@@ -33,20 +29,7 @@
                                     <h1>Administrador</h1>
                                 </div>
                             </div>
-                            <div class="col-md-5">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="input-group form">
-                                            <!--
-                           <input type="text" class="form-control" placeholder="Buscar...">
-                           <span class="input-group-btn">
-                             <button class="btn btn-primary" type="button">Buscar</button>
-                           </span>
-                           -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="col-md-2">
                                 <div class="navbar navbar-inverse" role="banner">
                                     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -74,7 +57,7 @@
                                         <a style="color:red" href="{{ route('admin/users') }}"> Users</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a style="color:red" href="{{ route('admin/posts') }}">Posts</a>
+                                        <a style="color:red" href="">Posts</a>
                                     </li>
                                     <li class="list-group-item">
                                         <a style="color:red" href="{{ route('views/user', Auth::user()->id) }}">Go Back</a>
@@ -88,7 +71,9 @@
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                    <li class="breadcrumb-item"><a style="color:red" href="{{ route('admin/dashboard') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a style="color:red" href="{{ route('admin/posts') }}">Posts</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
                                 </ol>
                             </nav>
 
@@ -98,24 +83,27 @@
 
                                     <div class="content-box-large">
 
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                <h2>Actualizar</h2>
+                                            </div>
+
+                                        </div>
+
                                         <div class="panel-body">
 
-                                            <h1>Bienvenido al Administrador</h1>
-                                            <h2>Aqui Puedes
-                                                <marquee scrollamount="2" direction="up">
+                                            <section class="example mt-4">
 
-                                                    <ul style="list-style-type:none">
-                                                        <strong>
-                                                            <li>Crear Usuarios</li>
-                                                            <li>Modificar informacion de Usuarios</li>
-                                                            <li>Eliminar Usuarios</li>
-                                                            <li>Crear Posteos</li>
-                                                            <li>Modificar Posteos</li>
-                                                            <li>Eliminar Posteos</li>
-                                                        </strong>
-                                                    </ul>
-                                                </marquee>
+                                                <form method="POST" action="{{ route('admin/posts/update',$posts->id) }}" role="form" enctype="multipart/form-data">
 
+                                                    <input type="hidden" name="_method" value="PUT">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                                    @include('admin.posts.frm.prt')
+
+                                                </form>
+
+                                            </section>
 
                                         </div>
 
@@ -135,9 +123,6 @@
 
         </div>
 
-        <hr>
-
-
 
 
 
@@ -146,11 +131,13 @@
 
 
     <footer class="text-muted mt-3 mb-3">
-
+        <div align="center">
+            Desarrollado por <a href="/" target="_blank">myFuture&reg</a>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="../../js/app.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
 </body>
 
