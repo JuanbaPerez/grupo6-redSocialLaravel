@@ -35,6 +35,8 @@ User: {{$user->name}}
         <strong>Email: </strong> {{$user->email}}
         <br>
         <strong>Fecha de Nacimiento:</strong> {{$user->birthday}}
+        <br>
+        <strong>Cantidad De Posteos:</strong> {{ count($user->posts) }}
 
 
 
@@ -94,7 +96,7 @@ User: {{$user->name}}
 
         </div>
 
-    <hr style="border: 1px solid red" >
+        <hr style="border: 1px solid red">
         @endforeach
 
 
