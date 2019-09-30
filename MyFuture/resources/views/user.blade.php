@@ -44,15 +44,91 @@ User: {{$user->name}}
 </ul>
 
 
-<a href="/users">
-    <button class="btn btn-primary" type="button" name="button">All Users</button>
-</a>
-<a href="/posts">
-    <button class="btn btn-primary" type="button" name="button">All Posts</button>
-</a>
 
-<a href="/update">
-    <button class="btn btn-primary" type="button" name="button">Edit</button>
-</a>
+<div class="addPostContainer">
+    <a href="addPost.php"><i class="fa fa-plus">Add Post</i></a>
+</div>
 
-@endsection
+<main class="profileUserContainer">
+
+
+
+    <div class="mobileAddPostContainer">
+        <a href=" {{ route('posts/add')}} "><i class="fa fa-plus">Add Post </i></a>
+    </div>
+
+
+    @forelse ($user->posts as $key => $post)
+    <div class="postContainerProfile">
+
+
+        <div class="postImageProfile">
+
+            <div class="single-img">
+
+                <!-- <img src="../storage/posts/imageTest.png" alt="postFoto"> -->
+                <img src="../../../storage/avatar/{{ $post->image }}" width="50" class="img-responsive">
+                <p>
+                    {{$post['description']}}
+                </p>
+
+                <div class="img-overlay">
+
+                    <div class="buttonsContainer">
+
+                        <div class="img-heart">
+                            <a href=" {{ route('post/detail', $post->id) }} ">
+                                <i class="fa fa-heart">38</i>
+                            </a>
+
+                        </div>
+
+                        <div class="img-comments">
+                            <a href="postDetails.php">
+                                <i class="fa fa-comment"> 5</i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        @endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <a href="/users">
+        <button class="btn btn-primary" type="button" name="button">All Users</button>
+    </a>
+    <a href="/posts">
+        <button class="btn btn-primary" type="button" name="button">All Posts</button>
+    </a>
+
+    <a href="/update">
+        <button class="btn btn-primary" type="button" name="button">Edit</button>
+    </a>
+
+    @endsection

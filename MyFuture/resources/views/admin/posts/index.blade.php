@@ -143,7 +143,7 @@
 
                                                                 <td class="v-align-middle">
 
-                                                                    <img src="../../../storage/posts/{{ $post->image }}" width="50" class="img-responsive">
+                                                                    <img src="../../../storage/avatar/{{ $post->image }}" width="50" class="img-responsive">
 
 
 

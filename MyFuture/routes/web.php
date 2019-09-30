@@ -25,11 +25,11 @@ Route::get("/categories", "CategoriesController@all");
 
 Route::get("/user/{id}", "UsersController@detail")->name("views/user");
 
-Route::get("/post/{id}", "PostsController@detail");
+Route::get("/post/{id}", "PostsController@detail")->name("post/detail");
 
 Route::get("/search", "UsersController@search");
 
-Route::get("/posts/add", "PostsController@add")->middleware("auth");
+Route::get("/posts/add", "PostsController@add")->middleware("auth")->name("posts/add");
 
 Route::post("/posts/add", "PostsController@store")->middleware("auth");
 
@@ -64,6 +64,7 @@ Route::put('admin/users/eliminar/{id}', 'AdminController@eliminar')->name('admin
 /* Crear Posteos */
 Route::get('admin/posts/crear', 'AdminController@crearPost')->name('admin/posts/crear');
 Route::put('admin/posts/store', 'AdminController@storePost')->name('admin/posts/store');
+
 
 /* Leer Posteos */
 Route::get('admin/posts', 'AdminController@indexPost')->name('admin/posts');

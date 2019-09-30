@@ -11,7 +11,7 @@ Add a post
     <h1>Add a post</h1>
 </div>
 
-<form method="POST" action="/posts/add" enctype="multipart/form-data">
+<form method="POST" action="{{ route('posts/add') }}" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group row">

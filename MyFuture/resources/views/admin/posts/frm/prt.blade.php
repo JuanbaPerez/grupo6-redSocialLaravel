@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="user_id" class="negrita">Usuario:</label>
                     <div>
-                        <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{ $posts->user['email'] }}">
+                        <input class="form-control" required="required" name="user_id" type="text" id="user_id" value="{{ $posts->user['id'] }}">
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
 
                         @else
 
-                        Aún no se ha cargado una imagen para este producto
+                        Aún no se ha cargado una imagen para este posteo
 
                         @endif
                     </div>
@@ -65,7 +65,7 @@
                     <select name="user_id">
                         <option value="">Elija un Usuario</option>
                         @forelse ($users as $key => $user)
-                        <option value="{{$user['id']}}">{{$user["email'"]}}</option>
+                        <option value="{{$user['id']}}">{{$user["email"]}}</option>
 
                         @empty
                         <option value="">NO HAY</option>

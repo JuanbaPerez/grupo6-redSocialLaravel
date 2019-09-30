@@ -13,7 +13,8 @@ Posts
 </div>
 
 <ul style="list-style-type: none">
-    @forelse($posts as $post)
+    @forelse($posts as $key => $post)
+
     <div class="postContainer">
 
 
@@ -35,8 +36,9 @@ Posts
 
         <div class="postImage">
 
-            <!--<img class="profilePicture" src="{{url('storage/posts/'. $post->image)}}" alt="{{$post->image}}"> !-->
-            <img class="photoContainer" src="{{asset('storage/posts/imageTest.png')}}">
+
+            <img class="photoContainer" src="../../../storage/avatar/{{$post['image'] }} ">
+
         </div>
 
         <div class="description">
