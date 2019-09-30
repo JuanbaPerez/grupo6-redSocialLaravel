@@ -15,7 +15,11 @@ Users
     @forelse($users as $user)
 
     <li>
-        <img style="width: 300px; margin-bottom: 10px; border-radius: 50%" class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
+        @if ($user['avatar'] != null)
+        <img style="width: 300px; margin-bottom: 10px; border-radius: 50px" class="profilePicture" src="../../../storage/avatar/{{ $user['avatar'] }}">
+        @else
+        <img style="width: 300px; margin-bottom: 10px; border-radius: 50%" class="profilePicture" src="../../../storage/avatar/img_avatar.png">
+        @endif
         <a style="color: black" href="/user/{{$user->id}}">
             {{$user->userName}}
         </a>

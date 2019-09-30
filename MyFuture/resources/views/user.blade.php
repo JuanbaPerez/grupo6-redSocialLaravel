@@ -46,7 +46,7 @@ User: {{$user->name}}
 
 
 <div class="addPostContainer">
-    <a href="addPost.php"><i class="fa fa-plus">Add Post</i></a>
+    <a href=" {{ route('posts/add')}} "><i class="fa fa-plus">Add Post</i></a>
 </div>
 
 <main class="profileUserContainer">
@@ -58,38 +58,35 @@ User: {{$user->name}}
     </div>
 
 
-    @forelse ($user->posts as $key => $post)
+
     <div class="postContainerProfile">
 
 
+        @forelse ($user->posts as $key => $post)
         <div class="postImageProfile">
 
             <div class="single-img">
 
-                <!-- <img src="../storage/posts/imageTest.png" alt="postFoto"> -->
+
                 <img src="../../../storage/avatar/{{ $post->image }}">
 
-                    <h2 style="font-weight:bold">
-                        {{$post['description']}}
-                    </h2>
+                <h2 style="font-weight:bold">
+                    {{$post['description']}}
+                </h2>
 
 
                 <div class="img-overlay">
 
                     <div class="buttonsContainer">
 
-                        <div class="img-heart">
+                        <div style="margin: 0 auto; height: auto;" class="">
                             <a href=" {{ route('post/detail', $post->id) }} ">
-                                <i class="fa fa-heart">38</i>
+                                <i style="font-size: 100px" class="fa fa-plus"></i>
                             </a>
 
                         </div>
 
-                        <div class="img-comments">
-                            <a href="postDetails.php">
-                                <i class="fa fa-comment"> 5</i>
-                            </a>
-                        </div>
+
                     </div>
 
                 </div>
@@ -97,6 +94,7 @@ User: {{$user->name}}
 
         </div>
 
+    <hr style="border: 1px solid red" >
         @endforeach
 
 

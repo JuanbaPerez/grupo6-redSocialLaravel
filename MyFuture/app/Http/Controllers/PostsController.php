@@ -38,7 +38,6 @@ class PostsController extends Controller
 
         return view("addPost", compact("posts"));
 
-
     }
 
 
@@ -58,10 +57,7 @@ class PostsController extends Controller
 
         $post = New Post();
 
-        $path = Storage::disk('public')->put('posts', $req->file('image'));     //comando que guarda la imagen en disco rigido :)
-
-        $post->fill(['image' => asset($path)]);
-
+        $post->image = $req->file('image')->store('/');
 
         $post->description = $req->description;
         $post->user_id = $req->user()->id;
