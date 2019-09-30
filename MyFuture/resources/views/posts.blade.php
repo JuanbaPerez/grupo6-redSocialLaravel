@@ -19,7 +19,7 @@ Posts
 
 
         <div class="photoProfileContainer">
-            <img class="profilePicture" src="{{asset('storage/mJG1PzYLEjNedOGHUIjvxyGqpoc3vXxLPWdVlv8i.png')}}">
+            <img class="profilePicture" src="../../../storage/avatar/{{$post->user['avatar'] }}">
 
 
             <div class="userName">
