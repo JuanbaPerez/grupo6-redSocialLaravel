@@ -55,7 +55,7 @@ public function show(int $userId)
     $user = User::find($userId);
     $followers = $user->followers;
     $followings = $user->followings;
-    return view('user.show', compact('user', 'followers' , 'followings'));
+    return view('user', compact('user', 'followers' , 'followings'));
 }
 
 

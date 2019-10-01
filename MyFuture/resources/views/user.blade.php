@@ -25,6 +25,7 @@ User: {{$user->name}}
 <ul style="list-style-type:none; background-color: lightgrey; width: 100%; margin: 0 auto; border-radius: 15px; font-size: 30px">
 
 
+
     <li style="font-family: 'Cinzel Decorative', cursive">
         <strong>Usuario: </strong> {{$user->name}}
         <br>
@@ -38,12 +39,19 @@ User: {{$user->name}}
         <br>
         <strong>Cantidad De Posteos:</strong> {{ count($user->posts) }}
         <br>
+        <strong>Cantidad de Seguidores: </strong> {{count($user->followers)}}
+
+        <br>
+        @if (count($user->followers) == 0)
         <button class="btn btn-info">
             <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
         </button>
+        @else
         <button class="btn btn-warning">
             <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
         </button>
+        @endif
+
 
 
     </li>
