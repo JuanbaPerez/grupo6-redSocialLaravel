@@ -87,5 +87,13 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 
 
 
+//FOLLOWERS FOLLOW RUTESSSS
+Route::get('/profile/{profileId}/follow', 'ProfileController@followUser')->name('user.follow')->middleware("auth");
+
+Route::get('/{profileId}/unfollow', 'ProfileController@unFollowUser')->name('user.unfollow')->middleware("auth");
+
+
+
+
 
 

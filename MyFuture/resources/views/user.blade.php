@@ -37,7 +37,13 @@ User: {{$user->name}}
         <strong>Fecha de Nacimiento:</strong> {{$user->birthday}}
         <br>
         <strong>Cantidad De Posteos:</strong> {{ count($user->posts) }}
-
+        <br>
+        <button class="btn btn-info">
+            <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
+        </button>
+        <button class="btn btn-warning">
+            <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
+        </button>
 
 
     </li>

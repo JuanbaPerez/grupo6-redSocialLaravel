@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Elocuent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -47,6 +48,24 @@ class User extends Authenticatable
     public function isAdmin() {
         return $this->is_admin;
     }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'leader_id', 'follower_id')->withTimestamps();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'leader_id')->withTimestamps();
+    }
+
 
 
 }
