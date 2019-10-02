@@ -41,23 +41,34 @@ User: {{$user->name}}
         <br>
         <strong>Cantidad de Seguidores: </strong> {{count($user->followers)}}
 
+            @forelse ($user->followers as $key => $usersFollowed)
+            <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowed['avatar'] }}" alt="">
+            <a href=" {{ route('views/user', $usersFollowed['id']) }}">{{$usersFollowed['name']}}</a>
+            @endforeach
+
         <br>
-        @if (count($user->followers) == 0)
-        <button class="btn btn-info">
-            <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
-        </button>
-        @else
-        <button class="btn btn-warning">
-            <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
-        </button>
-        @endif
+        <strong>Siguiendo:</strong> {{count($user->followings)}}
 
+            @forelse ($user->followings as $key => $usersFollowings)
+            <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowings['avatar'] }}" alt="">
+            <a href=" {{ route('views/user', $usersFollowings['id']) }}">{{$usersFollowings['name']}}</a>
+            @endforeach
 
-
+            <br>
+            @if ($user->followers && count($user->followers) == 0)
+            <button class="btn btn-info">
+                <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
+            </button>
+            @else
+            <button class="btn btn-warning">
+                <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
+            </button>
+            @endif
     </li>
 
 
 </ul>
+
 
 
 
@@ -97,7 +108,7 @@ User: {{$user->name}}
 
                         <div style="margin: 0 auto; height: auto;" class="">
                             <a href=" {{ route('post/detail', $post->id) }} ">
-                                <i style="font-size: 100px" class="fa fa-plus"></i>
+                                <i style="font-size: 100px; color: white" class="fa fa-plus"></i>
                             </a>
 
                         </div>

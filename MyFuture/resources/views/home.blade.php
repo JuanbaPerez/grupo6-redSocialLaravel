@@ -10,7 +10,10 @@
 
     <body style="background-image: url(../../storage/tree.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
         <div class="jumbotron">
-            <h1 style="font-size: 80px">Bienvenido a MyFuture</h1><br>
+            <marquee scrollamount="3" direction="up">
+
+                <h1 style="font-size: 80px">Bienvenido a MyFuture</h1><br>
+            </marquee>
             @if (Auth::check())
             <h2>Check Posts</h2>
             <a href="/posts">

@@ -15,6 +15,7 @@ Posts
 <ul style="list-style-type: none">
     @forelse($posts as $key => $post)
 
+
     <div class="postContainer">
 
 
@@ -29,7 +30,7 @@ Posts
                     <a style="color: black; font-size: 15px" href="/user/{{$post->user->id}}">{{$post->user["userName"]}}
                     </a>
                 </h2>
-                <p>30 minutes</p>
+                <p>{{$post->user['created_at']}}</p>
             </div>
 
         </div>

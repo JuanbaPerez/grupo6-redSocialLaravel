@@ -39,8 +39,6 @@ Route::post("/posts/delete", "PostsController@delete")->middleware("auth");
 
 
 // Rutas CRUD
-
-
 // Ruta Dashboard
 Route::get('admin/dashboard', 'Dashboard@index')->name('admin/dashboard');
 

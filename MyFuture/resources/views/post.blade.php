@@ -37,6 +37,7 @@ Posts
         <div class="postImage">
             <img src="../../../storage/avatar/{{ $post->image }}" alt="postFoto">
         </div>
+        <hr>
         <div class="details-Comments">
             <div class="photoProfileContainer">
                 <img class="profilePicture" src="../../../storage/avatar/{{ Auth::user()->avatar }}" alt="profile">
