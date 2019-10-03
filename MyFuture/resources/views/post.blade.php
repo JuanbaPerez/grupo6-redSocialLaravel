@@ -29,7 +29,7 @@ Posts
 
             <div class="userName">
                 <h2>{{$post->user['userName']}}</h2>
-                <p>1hs</p>
+                <p>{{ $post->created_at->diffForHumans() }}</p>
             </div>
 
         </div>

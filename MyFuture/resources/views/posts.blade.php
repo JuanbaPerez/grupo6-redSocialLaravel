@@ -26,7 +26,7 @@ Posts
                     <a style="color: black; font-size: 15px" href="/user/{{$post->user->id}}">{{$post->user["userName"]}}
                     </a>
                 </h2>
-                <p>{{$post->user['created_at']}}</p>
+                <p>{{ $post->created_at->diffForHumans() }}</p>
             </div>
 
         </div>
@@ -140,7 +140,7 @@ Posts
     @endforelse
 </ul>
 
-{{$posts->links()}}
+
 
 <script type="text/javascript">
     var clicks = 0;

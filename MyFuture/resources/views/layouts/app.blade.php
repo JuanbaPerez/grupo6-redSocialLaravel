@@ -39,15 +39,15 @@
                         <ul class="navbar-nav">
                             @if (Auth::check())
                             <li class="nav-item">
-                                <a style="color: white" class="nav-link" href="/posts">Posts</a>
+                                <a style="color: white" class="nav-link" href="/posts">Inicio</a>
                             </li>
 
                             <li class="nav-item">
-                                <a style="color: white" class="nav-link" href="/users">Users</a>
+                                <a style="color: white" class="nav-link" href="/users">Usuarios</a>
                             </li>
 
                             <li class="nav-item">
-                                <a style="color: white" class="nav-link" href="/posts/add">Add a post</a>
+                                <a style="color: white" class="nav-link" href="/posts/add">Agregar un Post</a>
                             </li>
 
                             <div class="search">
@@ -55,7 +55,7 @@
                                 <form action="/search" method="get">
                                     @csrf
                                     <input class="form-control" type="text" name="search">
-                                    <button type="submit" name="button" class="btn btn-primary">Search</button>
+                                    <button type="submit" name="button" class="btn btn-primary">Buscar</button>
 
                                 </form>
                             </div>
@@ -81,7 +81,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img style="width: 40px;border-radius: 50%;position: relative;bottom: 4px;margin-left: 5px;margin-right: 10px;" src="../../../storage/avatar/{{ Auth::user()->avatar }}" alt="">
-                                <span style="color:lightgrey" class="caret">{{ Auth::user()->name }}</span>
+                                <span style="color:lightgrey" class="caret">{{ Auth::user()->userName }}</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">

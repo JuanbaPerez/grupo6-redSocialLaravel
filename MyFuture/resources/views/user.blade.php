@@ -14,7 +14,7 @@ User: {{$user->name}}
 <div class="bpaContainer">
     <!-- ButtonProfileContainer -->
     <button class="btn btn-danger">
-        <a href="{{ route('admin/dashboard') }}">Administrador</a>
+        <a style="color: Black" href="{{ route('admin/dashboard') }}">Administrador</a>
     </button>
 </div>
 
@@ -24,7 +24,7 @@ User: {{$user->name}}
 </div>
 @else
 <div class="paUser">
-    <img style="display:block; margin: 0 auto; border-radius: 50%; margin-bottom: 20px; width: 50%;" src="../../../storage/avatar/img_avatar.png }}" alt="">
+    <img style="display:block; margin: 0 auto; border-radius: 50%; margin-bottom: 20px; width: 50%;" src="../../../storage/avatar/img_avatar.png" alt="">
 </div>
 @endif
 
@@ -40,8 +40,8 @@ User: {{$user->name}}
         <br>
         <strong>Apellido: </strong> {{$user->lastName}}
         <br>
-
-
+        <strong>Creado: {{ $user->created_at->toFormattedDateString() }}</strong>
+        <br>
         <strong>Nickname: </strong> {{$user->userName}}
         <br>
         <strong>Email: </strong> {{$user->email}}
@@ -50,7 +50,7 @@ User: {{$user->name}}
         <br>
         <strong>Cantidad De Posteos:</strong> {{ count($user->posts) }}
         <br>
-        <strong>Cantidad de Seguidores: </strong> {{count($user->followers)}}
+        <strong>Seguidores: </strong> {{count($user->followers)}}
 
         @forelse ($user->followers as $key => $usersFollowed)
         <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowed['avatar'] }}" alt="">
@@ -66,7 +66,7 @@ User: {{$user->name}}
         @endforeach
 
         <br>
-        @if ($user->followers && count($user->followers) == 0)
+        @if (Auth::user()->followers && count($user->followers) == 0)
         <button class="btn btn-info">
             <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
         </button>
@@ -158,15 +158,6 @@ User: {{$user->name}}
 
 
 
-    <a href="/users">
-        <button class="btn btn-primary" type="button" name="button">All Users</button>
-    </a>
-    <a href="/posts">
-        <button class="btn btn-primary" type="button" name="button">All Posts</button>
-    </a>
 
-    <a href="/update">
-        <button class="btn btn-primary" type="button" name="button">Edit</button>
-    </a>
 
     @endsection

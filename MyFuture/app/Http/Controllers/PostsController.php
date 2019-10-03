@@ -14,9 +14,10 @@ class PostsController extends Controller
 
     public function all() {
 
-        $posts = Post::paginate(4);
+        $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
 
-        return view("posts", compact("posts"));
+
+        return view("posts", compact('posts'));
     }
 
 

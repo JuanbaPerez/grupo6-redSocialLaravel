@@ -146,7 +146,15 @@
                                                                 <td class="v-align-middle">{{$user->genre}}</td>
                                                                 <td class="v-align-middle">
 
-                                                                    <img src="../../../storage/avatar/{{ $user->avatar }}" width="50" class="img-responsive">
+
+
+                                                                        @if ($user->avatar != null)
+                                                                        <img class="img-responsive" width="50" src="../../../storage/avatar/{{ $user->avatar }}">
+                                                                        @else
+                                                                        <img style="border-radius: 30%" class="img-responsive" width="50" src="../../../storage/avatar/img_avatar.png">
+                                                                        @endif
+
+
 
 
 

@@ -69,7 +69,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-      $route = $data["avatar"]->store("public");
+      $route = $data["avatar"]->store("/");
 
       $fileName = basename($route);
 
