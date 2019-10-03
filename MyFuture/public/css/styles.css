@@ -568,7 +568,11 @@ a.social {
     height: 260px;
   }
 
+  .postContainer:nth-child(1n) {
 
+    margin-top: 50px;
+
+  }
 
 
   .postContainer {

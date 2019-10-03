@@ -21,7 +21,7 @@ Posts
         <a href="/posts"> <i class="fa fa-arrow-left arrowFont"></i> </a>
     </div>
 
-    <div class="postContainer postDetailContainer">
+    <div style="margin-top:0px" class="postContainer postDetailContainer">
 
 
         <div class="photoProfileContainer">
