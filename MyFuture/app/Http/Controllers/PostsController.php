@@ -14,7 +14,7 @@ class PostsController extends Controller
 
     public function all() {
 
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(4);
 
         return view("posts", compact("posts"));
     }
@@ -24,8 +24,9 @@ class PostsController extends Controller
     public function detail($id)
     {
         $post = Post::find($id);
+        $user = User::find($id);
 
-        return view("/post", compact("post"));
+        return view("/post", compact('post', 'user'));
     }
 
 

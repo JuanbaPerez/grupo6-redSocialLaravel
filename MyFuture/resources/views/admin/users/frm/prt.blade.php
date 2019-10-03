@@ -13,7 +13,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="userName" class="negrita">Nombre De Usuario:</label>
+                    <label for="lastName" class="negrita">Apellido:</label>
+                    <div>
+                        <input class="form-control" placeholder="Perez" required="required" name="lastName" type="text" id="lastName" value="{{ $users->lastName }}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName" class="negrita">Usuario:</label>
                     <div>
                         <input class="form-control" placeholder="NaithanPerx" required="required" name="userName" type="text" id="userName" value="{{ $users->userName }}">
                     </div>
@@ -26,12 +33,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="lastName" class="negrita">Apellido:</label>
-                    <div>
-                        <input class="form-control" placeholder="Perez" required="required" name="lastName" type="text" id="lastName" value="{{ $users->lastName }}">
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <label for="birthday" enctype="multipart/form-data" class="negrita">Fecha De Nacimiento:</label>
@@ -90,6 +91,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="lastName" class="negrita">Apellido:</label>
+                    <div>
+                        <input class="form-control" placeholder="Perez" required="required" name="lastName" type="text" id="lastName">
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="userName" class="negrita">Nombre De Usuario:</label>
                     <div>
                         <input class="form-control" placeholder="NaithanPerx" required="required" name="userName" type="text" id="userName">
@@ -104,12 +112,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="lastName" class="negrita">Apellido:</label>
-                    <div>
-                        <input class="form-control" placeholder="Perez" required="required" name="lastName" type="text" id="lastName">
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <label for="birthday" class="negrita">Fecha De Nacimiento:</label>

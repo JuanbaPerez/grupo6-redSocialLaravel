@@ -7,12 +7,12 @@ Posts
 
 @section("main")
 
-
-
-<div class="jumbotron">
-    <h1>Detail Post</h1>
-</div>
-
+<style>
+    .user-Image-Profile {
+        display: block;
+        width: 50px;
+    }
+</style>
 
 <main>
 
@@ -25,10 +25,10 @@ Posts
 
 
         <div class="photoProfileContainer">
-            <img class="profilePicture" src="../../../storage/avatar/{{ Auth::user()->avatar }}" alt="profile">
+            <img class="profilePicture" src="../../../storage/avatar/{{ $post->user['avatar'] }}" alt="profile">
 
             <div class="userName">
-                <h2>{{Auth::user()->userName}}</h2>
+                <h2>{{$post->user['userName']}}</h2>
                 <p>1hs</p>
             </div>
 
@@ -40,12 +40,12 @@ Posts
         <hr>
         <div class="details-Comments">
             <div class="photoProfileContainer">
-                <img class="profilePicture" src="../../../storage/avatar/{{ Auth::user()->avatar }}" alt="profile">
+                <img class="profilePicture" src="../../../storage/avatar/{{ $post->user['avatar'] }}" alt="profile">
 
 
 
                 <div class="details-Nick">
-                    <h2>{{Auth::user()->userName}}</h2>
+                    <h2>{{$post->user['userName'] }}</h2>
                     <hr>
                     <div class="Est">
                         <p>{{$post->description}}</p>
@@ -59,61 +59,82 @@ Posts
         </div>
 
         <hr>
-        <div class="user-Details-Container">
 
-            <div class="user-Image-Profile">
-                <img class="user-Image-Profile" src="../data/img/profilepic.jpg" alt="profile">
-            </div>
 
-            <div class="comments-Container">
-                <h2 class="user-Name">Franky Style</h2>
-                <p class="users-Comments">WOW!</p>
-            </div>
 
-        </div>
 
-        <div class="user-Details-Container">
 
-            <div class="user-Image-Profile">
-                <img class="user-Image-Profile" src="../data/img/profilepic.jpg" alt="profile">
-            </div>
-
-            <div class="comments-Container">
-                <h2 class="user-Name">Homer el mero mero</h2>
-                <p class="users-Comments">AMAZING!</p>
-            </div>
-
-        </div>
-
-        <div class="user-Details-Container">
-
-            <div class="user-Image-Profile">
-                <img class="user-Image-Profile" src="../data/img/profilepic.jpg" alt="profile">
-            </div>
-
-            <div class="comments-Container">
-                <h2 class="user-Name">C.R.O</h2>
-                <p class="users-Comments">DELUXE!</p>
-            </div>
-
-        </div>
-
-        <hr>
 
         <section>
+
+
 
 
             <div class="postIcons">
 
                 <div class="postIcons-heart">
-                    <button class="buttons" type="button" name="button"><i class="fa fa-heart"> 38</i></button>
+                    <button class="buttons" type="button" onclick="increaseValue()" id="like" name="button">
+                        <i class="fa fa-thumbs-up">
+                            <span id="clicks">0</span>
+                        </i>
+                    </button>
+
 
                 </div>
 
 
                 <div class="postIcons-comment">
 
-                    <button class="buttons" type="button" name="button"><i class="fa fa-comment"> 3</i></button>
+                    <button class="buttons" type="button" onclick="showHideComments()" name="button"><i class="fa fa-comment"> 12</i></button>
+
+                </div>
+                <button style="width: 50%" class="buttons" type="button" onclick="increaseValueDislike()" id="dislike" name="button">
+                    <i class="fa fa-thumbs-down">
+                        <span id="clicks">0</span>
+                    </i>
+                </button>
+
+
+
+            </div>
+
+            <div style="width: 100%;display: block" id="myDiv">
+                <div class="user-Details-Container">
+
+                    <div class="user-Image-Profile">
+                        <img class="user-Image-Profile" src="../../../storage/avatar/img_avatar.png" alt="profile">
+                    </div>
+
+                    <div class="comments-Container">
+                        <h2 class="user-Name">Franky Style</h2>
+                        <p class="users-Comments">WOW!</p>
+                    </div>
+
+                </div>
+
+                <div class="user-Details-Container">
+
+                    <div class="user-Image-Profile">
+                        <img class="user-Image-Profile" src="../../../storage/avatar/img_avatar.png" alt="profile">
+                    </div>
+
+                    <div class="comments-Container">
+                        <h2 class="user-Name">Homer el mero mero</h2>
+                        <p class="users-Comments">AMAZING!</p>
+                    </div>
+
+                </div>
+
+                <div class="user-Details-Container">
+
+                    <div class="user-Image-Profile">
+                        <img class="user-Image-Profile" src="../../../storage/avatar/img_avatar.png" alt="profile">
+                    </div>
+
+                    <div class="comments-Container">
+                        <h2 class="user-Name">C.R.O</h2>
+                        <p class="users-Comments">DELUXE!</p>
+                    </div>
 
                 </div>
             </div>
@@ -125,7 +146,9 @@ Posts
 
 </main>
 
-@if (Auth::check())
+
+
+@if (Auth::check() && Auth::user()->isAdmin())
 <form class="" action="/posts/delete" method="post">
     @csrf
 
@@ -133,5 +156,30 @@ Posts
     <button type="submit" name="button" class="btn btn-danger">Delete Post</button>
 </form>
 @endif
+
+<script type="text/javascript">
+    var clicks = 0;
+
+    function increaseValue() {
+        clicks += 1;
+        document.getElementById('like').innerHTML = clicks;
+    };
+
+    function increaseValueDislike() {
+        clicks += 1;
+        document.getElementById('dislike').innerHTML = clicks;
+    }
+
+
+
+    function showHideComments() {
+        var x = document.getElementById("myDiv");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 
 @endsection

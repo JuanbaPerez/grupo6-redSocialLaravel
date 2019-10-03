@@ -7,17 +7,26 @@ User: {{$user->name}}
 
 @section("main")
 
-<div class="jumbotron">
-    <h1>Check User {{$user->name}} <br>detail</h1>
-</div>
+
 
 @if (Auth::check() && Auth::user()->isAdmin())
 
-<div>
+<div class="bpaContainer">
+    <!-- ButtonProfileContainer -->
     <button class="btn btn-danger">
         <a href="{{ route('admin/dashboard') }}">Administrador</a>
     </button>
 </div>
+
+@if ($user->avatar != null)
+<div class="paUser">
+    <img style="display:block; margin: 0 auto; border-radius: 50%; margin-bottom: 20px; width: 50%;" src="../../../storage/avatar/{{ $user->avatar }}" alt="">
+</div>
+@else
+<div class="paUser">
+    <img style="display:block; margin: 0 auto; border-radius: 50%; margin-bottom: 20px; width: 50%;" src="../../../storage/avatar/img_avatar.png }}" alt="">
+</div>
+@endif
 
 
 @endif
@@ -27,11 +36,13 @@ User: {{$user->name}}
 
 
     <li style="font-family: 'Cinzel Decorative', cursive">
-        <strong>Usuario: </strong> {{$user->name}}
-        <br>
-        <strong>Nickname: </strong> {{$user->userName}}
+        <strong>Nombre: </strong> {{$user->name}}
         <br>
         <strong>Apellido: </strong> {{$user->lastName}}
+        <br>
+
+
+        <strong>Nickname: </strong> {{$user->userName}}
         <br>
         <strong>Email: </strong> {{$user->email}}
         <br>
@@ -41,29 +52,29 @@ User: {{$user->name}}
         <br>
         <strong>Cantidad de Seguidores: </strong> {{count($user->followers)}}
 
-            @forelse ($user->followers as $key => $usersFollowed)
-            <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowed['avatar'] }}" alt="">
-            <a href=" {{ route('views/user', $usersFollowed['id']) }}">{{$usersFollowed['name']}}</a>
-            @endforeach
+        @forelse ($user->followers as $key => $usersFollowed)
+        <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowed['avatar'] }}" alt="">
+        <a href=" {{ route('views/user', $usersFollowed['id']) }}">{{$usersFollowed['name']}}</a>
+        @endforeach
 
         <br>
         <strong>Siguiendo:</strong> {{count($user->followings)}}
 
-            @forelse ($user->followings as $key => $usersFollowings)
-            <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowings['avatar'] }}" alt="">
-            <a href=" {{ route('views/user', $usersFollowings['id']) }}">{{$usersFollowings['name']}}</a>
-            @endforeach
+        @forelse ($user->followings as $key => $usersFollowings)
+        <img style="display: block; width:200px; border-radius: 10px" src="../../../storage/avatar/{{ $usersFollowings['avatar'] }}" alt="">
+        <a href=" {{ route('views/user', $usersFollowings['id']) }}">{{$usersFollowings['name']}}</a>
+        @endforeach
 
-            <br>
-            @if ($user->followers && count($user->followers) == 0)
-            <button class="btn btn-info">
-                <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
-            </button>
-            @else
-            <button class="btn btn-warning">
-                <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
-            </button>
-            @endif
+        <br>
+        @if ($user->followers && count($user->followers) == 0)
+        <button class="btn btn-info">
+            <a href="{{ route('user.follow', $user->id) }}">Seguir usuario</a>
+        </button>
+        @else
+        <button class="btn btn-warning">
+            <a href="{{ route('user.unfollow', $user->id) }}">Dejar de seguir usuario</a>
+        </button>
+        @endif
     </li>
 
 

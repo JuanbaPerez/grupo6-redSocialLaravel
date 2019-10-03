@@ -7,10 +7,6 @@ Users
 
 @section("main")
 
-<div class="jumbotron">
-    <h1>Check our Users</h1>
-</div>
-
 <ul style="list-style-type: none">
     @forelse($users as $user)
 
